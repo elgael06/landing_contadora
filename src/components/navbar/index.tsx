@@ -1,33 +1,39 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import './style.css';
 
 const links = [
-    { name: 'acerca de mi', uri: '/about', icon: 'fas fa-info' },
-    { name: 'mis servicios', uri: '/services', icon: 'fas fa-bars' },
+    { name: 'informacion', uri: '/about', icon: 'fas fa-info' },
+    { name: 'servicios', uri: '/services', icon: 'fas fa-bars' },
     { name: 'resumen', uri: '/resumen', icon: 'fas fa-file-alt' },
-    { name: 'Portfolio', uri: '/Portfolio', icon: 'fas fa-th-list' },
+    { name: 'Portafolio', uri: '/Portfolio', icon: 'fas fa-th-list' },
     { name: 'Contacto', uri: '/Contact', icon: 'fas fa-envelope' },
 ];
 
 const NavBar = () => {
+    const [active, setActicve] = useState(false);
 
     return (<nav className='navbar is-link is-fixed-top'>
         <div className='navbar-brand'>
-            <div className='navbar-burger burger' data-target="navbar">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div className='navbar-start'>
+                <Link to='/' className='navbar-item' >
+                    <span className="icon">
+                        <i className='fas fa-home'></i>
+                    </span>
+                    <span> Inicio </span>
+                </Link>
             </div>
 
-            <div id='navbar' className='navbar-menu'>
+            <div role="button" className="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" onClick={() => setActicve(!active)}>
+                <i className='btn-menu-bar'>
+                    <section className="icon">
+                        <i className={active ? 'fas fa-minus' : 'fas fa-ellipsis-v'}></i>
+                    </section>
+                </i>
+            </div>
 
-                <div className='navbar-start'>
-                    <Link to='/' className='navbar-item' >
-                        <span className="icon">
-                            <i className='fas fa-home'></i>
-                        </span>
-                        <span> Inicio </span>
-                    </Link>
-                </div>
+            <div id='navMenu' className={`navbar-menu ${active ? 'is-active' : ''}`}>
+
                 <div className='navbar-end'>
                     {
                         links.map((item, index) => <Link to={item.uri} className='navbar-item' key={`url_${index}`} >
