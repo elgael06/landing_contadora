@@ -1,10 +1,10 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import ServicesPage from '../views/Services';
 
 //pages
 const AboutPage = lazy(() => import("../views/About"));
 const HomePage = lazy(() => import("../views/Home"));
+const ServicesPage = lazy(() => import("../views/Services"));
 const NotFoundPage = lazy(() => import("../views/NotFound"));
 
 const PublicRoutes = () => {
