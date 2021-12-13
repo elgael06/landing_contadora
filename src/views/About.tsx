@@ -1,13 +1,15 @@
 
 import { useEffect } from 'react';
 import contadorSignal from '../signal/contador.signal';
+import themeSignal from '../signal/theme.signal';
 
 const AboutPage = () => {
     const numero = contadorSignal.useText();
 
     useEffect(()=>{
         console.log('value',numero);
-    },[numero]);
+        themeSignal.setTheme('is-info');
+    },[]);
 
     const handleChange = (value: number) => () => {
         const newNum = numero+value;

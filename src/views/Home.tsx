@@ -1,6 +1,10 @@
+import { useEffect } from "react";
+import themeSignal from '../signal/theme.signal';
 
 const HomePage = () => {
-
+    useEffect(()=>{
+        themeSignal.setTheme('is-link');
+    },[]);
     return (<>
         <div className='hero-body'>
             <div className='container'>

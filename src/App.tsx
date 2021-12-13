@@ -17,7 +17,6 @@ function App() {
 
   return (<Suspense fallback={<div>cargando...</div>}>
     <Layout>
-      <h3>contador {numero}</h3>
       <BrowserRouter>
         <NavBar />
         <PublicRoutes />

@@ -13,7 +13,7 @@ const links = [
 const NavBar = () => {
     const [active, setActicve] = useState(false);
 
-    return (<nav className='navbar is-link is-fixed-top'>
+    return (<nav className='navbar is-fixed-top'>
         <div className='navbar-brand'>
             <div className='navbar-start'>
                 <Link to='/' className='navbar-item' >
