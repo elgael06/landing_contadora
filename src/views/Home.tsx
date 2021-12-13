@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import themeSignal from '../signal/theme.signal';
+import themeSignal from '../signals/theme.signal';
 
 const HomePage = () => {
     useEffect(()=>{

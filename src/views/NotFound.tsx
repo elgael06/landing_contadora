@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import themeSignal from "../signal/theme.signal";
+import themeSignal from "../signals/theme.signal";
 
 
 const NotFoundPage = () => {

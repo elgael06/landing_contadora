@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
-import contadorSignal from '../signal/contador.signal';
-import themeSignal from '../signal/theme.signal';
+import contadorSignal from '../signals/contador.signal';
+import themeSignal from '../signals/theme.signal';
 
 const AboutPage = () => {
     const numero = contadorSignal.useText();

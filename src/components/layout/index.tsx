@@ -1,5 +1,4 @@
-import React from "react";
-import themeSignal from '../../signal/theme.signal';
+import themeSignal from '../../signals/theme.signal';
 
 type props = {
     children: any
