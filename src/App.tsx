@@ -1,18 +1,29 @@
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense, useEffect } from 'react';
+import { BrowserRouter } from "react-router-dom";
 import './App.css'
 import 'bulma/css/bulma.css';
-import PublicRoutes from './routers';
-import NavBar from "./components/navbar";
-import Layout from "./components/layout";
-function App() {
+import contadorSignal from './signal/contador.signal';
 
-  return (<Layout>
-    <BrowserRouter>
-      <NavBar />
-      <PublicRoutes />
-    </BrowserRouter>
-  </Layout>);
+const PublicRoutes = lazy(() => import('./routers'));
+const NavBar = lazy(() => import("./components/navbar"));
+const Layout = lazy(() => import("./components/layout"));
+
+function App() {
+  const numero = contadorSignal.useText();
+
+  useEffect(()=>{
+    console.log('value app->',numero);
+  });
+
+  return (<Suspense fallback={<div>cargando...</div>}>
+    <Layout>
+      <h3>contador {numero}</h3>
+      <BrowserRouter>
+        <NavBar />
+        <PublicRoutes />
+      </BrowserRouter>
+    </Layout>
+  </Suspense>);
 }
 
 export default App
