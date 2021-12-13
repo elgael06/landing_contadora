@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "lvp-landing"
-  }
+    "default": "lvp-landing",
+    "landing_app": "landingcontador"
+  },
+  "targets": {}
 }
