@@ -8,7 +8,7 @@ import Layout from "./components/layout";
 function App() {
 
   return (<Layout>
-    <BrowserRouter>
+    <BrowserRouter basename="store-products">
       <NavBar />
       <PublicRoutes />
     </BrowserRouter>

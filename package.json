@@ -1,8 +1,9 @@
 {
   "name": "lvp-landing",
   "version": "0.0.1",
+  "homepage": "/store-products",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --base=/store-products/",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "tsc && vite build && firebase deploy --only hosting:lvp-landing"
